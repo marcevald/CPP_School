@@ -1,5 +1,6 @@
 #include "CprNr.h"
 #include <sstream>
+#include "Date.h"
 
 using namespace std;
 
@@ -12,7 +13,6 @@ CprNr::CprNr()
 CprNr::~CprNr()
 {
 }
-
 
 CprNr::CprNr(string etCprNr)
 {
@@ -87,5 +87,61 @@ int CprNr::getDato() //Returns date in format YYYYMMDD
 
 int CprNr::getAlder()
 {
-	return 0;
+	return 2018 - getAar();
 }
+
+bool CprNr::erMand()
+{
+	string str = nummeret;
+	string newstr = str.substr(9, 1);
+	int num;
+
+	stringstream toint(newstr); // Convert to integer
+	toint >> num;
+
+	if (num % 2 == 0)
+		return false;
+	else
+		return true;
+}
+
+bool CprNr::erKvinde()
+{
+	string str = nummeret;
+	string newstr = str.substr(9, 1);
+	int num;
+
+	stringstream toint(newstr); // Convert to integer
+	toint >> num;
+
+	if (num % 2 != 0)
+		return false;
+	else
+		return true;
+}
+
+bool CprNr::isValid()
+{
+	string str = nummeret;
+	int length = str.length();
+	int dato = getDato();
+	int sum = 0;
+
+	 Date newDate(dato);
+
+	 int check[10] = {4,3,2,7,6,5,4,3,2,1};
+
+	 for (int i = 0; i < 10; i++)
+	 {
+		 sum += (check[i] * stoi(str.substr(i, 1)));
+	 }
+
+	if (length != 10)
+		return false;
+	if (!newDate.validate())
+		return false;
+	if (sum % 11 != 0)
+		return false;
+	return true;
+}
+
