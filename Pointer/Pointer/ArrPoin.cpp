@@ -1,4 +1,5 @@
 #include "ArrPoin.h"
+#include <stdexcept>
 
 using namespace std;
 
@@ -13,16 +14,28 @@ using namespace std;
 
 	ArrPoin::ArrPoin(int aSize)
 	{
+		//Initialize Array
 		arraySize = aSize;
 		varSizeArray = new int[aSize];
+
+		//Initialize Array with all 0
+		for (int i = 0; i < arraySize; i++)
+		{
+			varSizeArray[i] = 0;
+		}
 	}
 
 	void ArrPoin::setIx(int anI, int aV)
 	{
+		if (anI > arraySize)
+		{
+			throw exception();
+		}
 
+		varSizeArray[anI] = aV;
 	}
 
-	int ArrPoin(int anI)
+	int ArrPoin::getIx(int anI)
 	{
-		return 0;
+		return varSizeArray[anI];
 	}

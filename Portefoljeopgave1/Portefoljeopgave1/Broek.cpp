@@ -38,8 +38,6 @@ Broek::Broek(int aN, int aD)
 		naevner = abs(naevner);
 		taeller = taeller * (-1);
 	}
-
-
 }
 
 int Broek::getTaeller()
