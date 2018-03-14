@@ -13,6 +13,11 @@ Broek::~Broek()
 
 Broek::Broek(int aN, int aD)
 {
+	if (aD == 0)
+	{
+		throw exception();
+	}
+	
 	if (aN == 0)
 	{
 		taeller = 0;

@@ -25,4 +25,5 @@ private:
 	int getGcd(int inN, int inD); //Get greastest common denominator (GCD)
 	int taeller;
 	int naevner;
+
 };

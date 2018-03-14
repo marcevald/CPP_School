@@ -36,10 +36,6 @@ int main()
 		catch (const exception& exception)
 		{
 			cout << "You have tried to put a value in a non indexed position, try again!" << endl;
-
 		}
-
-
-		
 	}
 }
