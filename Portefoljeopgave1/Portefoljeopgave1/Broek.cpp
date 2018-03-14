@@ -20,8 +20,7 @@ Broek::Broek(int aN, int aD)
 	}
 	else
 	{
-		//Find the greatest common denominator of fraction (GCD)
-		int gcd = getGcd(aN, aD);
+		int gcd = getGcd(aN, aD); //Find the greatest common denominator of fraction (GCD)
 
 		taeller = aN;
 		naevner = aD;
@@ -29,6 +28,18 @@ Broek::Broek(int aN, int aD)
 		taeller = taeller / gcd;
 		naevner = naevner / gcd;
 	}
+
+	// Make sure -/- is +/+ and +/- is -/+
+	if (taeller < 0 && naevner < 0)
+		naevner = abs(naevner);
+
+	if (naevner < 0 && taeller > 0)
+	{
+		naevner = abs(naevner);
+		taeller = taeller * (-1);
+	}
+
+
 }
 
 int Broek::getTaeller()
@@ -43,18 +54,19 @@ int Broek::getNaevner()
 
 int Broek::getGcd(int inN, int inD)
 {
-	int  gcd = 0;
+	int  gcd;
 
-	if (inN < 0)
+	int N = abs(inN);
+	int D = abs(inD);
+
+
+	for (int i = 1; i <= N && i <= D; i++)
 	{
-		inN = inN * (-1); //If fraction is negative ignore, when finde GCD
-	}
-	for (int i = 1; i <= inN && i <= inD; i++)
-	{
-		if (inN % i == 0 && inD % i == 0)
+		if (N % i == 0 && D % i == 0)
 			gcd = i;
 	}
 		return gcd;
+
 	
 }
 
@@ -142,6 +154,7 @@ Broek Broek::divider(Broek aF)
 	int Taeller = getTaeller();
 	int Naevner = getNaevner();
 
+	//Make sure -/- is positive, abd +/- is -/+
 	nTaeller = Taeller * pNaevner;
 	nNaevner = Naevner * pTaeller;
 
@@ -151,10 +164,13 @@ Broek Broek::divider(Broek aF)
 
 }
 
+/*
 Broek Broek::operator+(Broek in)
 {
 
 }
+
+*/
 
 
 

@@ -14,8 +14,7 @@ using namespace std;
 	ArrPoin::ArrPoin(int aSize)
 	{
 		arraySize = aSize;
-
-
+		varSizeArray = new int[aSize];
 	}
 
 	void ArrPoin::setIx(int anI, int aV)
@@ -25,5 +24,5 @@ using namespace std;
 
 	int ArrPoin(int anI)
 	{
-
+		return 0;
 	}

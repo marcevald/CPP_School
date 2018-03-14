@@ -40,4 +40,6 @@ int main()
 	cout << "Resultatet af multiplikation: " << b1.multiplicer(b2).getTaeller() << "/" << b1.multiplicer(b2).getNaevner() << endl;
 
 	cout << "Resultatet af division: " << b1.divider(b2).getTaeller() << "/" << b1.divider(b2).getNaevner() << endl;
+
+
 }
