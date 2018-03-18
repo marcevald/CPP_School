@@ -88,19 +88,11 @@ Broek Broek::adder(Broek aF)
 	int Taeller = getTaeller();
 	int Naevner = getNaevner();
 
-	if (pTaeller != 0 || Taeller != 0) 
-	{
-		tmpTaeller1 = Taeller * pNaevner;
-		tmpTaeller2 = pTaeller * Naevner;
+	tmpTaeller1 = Taeller * pNaevner;
+	tmpTaeller2 = pTaeller * Naevner;
 
-		nTaeller = tmpTaeller1 + tmpTaeller2;
-		nNaevner = pNaevner * Naevner;
-	}
-	else
-	{
-		nTaeller = pTaeller + Taeller;
-		nNaevner = pNaevner + Naevner;
-	}
+	nTaeller = tmpTaeller1 + tmpTaeller2;
+	nNaevner = pNaevner * Naevner;
 
 
 	Broek ret(nTaeller, nNaevner);
@@ -123,19 +115,11 @@ Broek Broek::subtraher(Broek aF)
 	int Taeller = getTaeller();
 	int Naevner = getNaevner();
 
-	if (pTaeller != 0 || Taeller != 0)
-	{
-		tmpTaeller1 = Taeller * pNaevner;
-		tmpTaeller2 = pTaeller * Naevner;
-
-		nTaeller = tmpTaeller1 - tmpTaeller2;
-		nNaevner = pNaevner * Naevner;
-	}
-	else
-	{
-		nTaeller = pTaeller - Taeller;
-		nNaevner = pNaevner - Naevner;
-	}
+	tmpTaeller1 = Taeller * pNaevner;
+	tmpTaeller2 = pTaeller * Naevner;
+	
+	nTaeller = tmpTaeller1 - tmpTaeller2;
+	nNaevner = pNaevner * Naevner;
 
 	Broek ret(nTaeller, nNaevner); //Instanciate new Broek Class ret, to return result.
 
