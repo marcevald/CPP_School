@@ -13,7 +13,7 @@ Broek::~Broek()
 
 Broek::Broek(int aN, int aD)
 {
-	if (aD == 0)
+	if (aD == 0 && aN != 0) // Makes sure you cannot divide by 0. But it is possible to input 0/0.
 	{
 		throw exception();
 	}
@@ -25,13 +25,13 @@ Broek::Broek(int aN, int aD)
 	}
 	else
 	{
-		int gcd = getGcd(aN, aD); //Find the greatest common denominator of fraction (GCD)
+		int gcf = getGcf(aN, aD); //Find the greatest common factor of fraction (GCF)
 
 		taeller = aN;
 		naevner = aD;
 
-		taeller = taeller / gcd;
-		naevner = naevner / gcd;
+		taeller = taeller / gcf;
+		naevner = naevner / gcf;
 	}
 
 	// Make sure -/- is +/+ and +/- is -/+
@@ -55,20 +55,21 @@ int Broek::getNaevner()
 	return naevner;
 }
 
-int Broek::getGcd(int inN, int inD)
+int Broek::getGcf(int inN, int inD)
 {
-	int  gcd;
+	int  gcf;
 
-	int N = abs(inN);
+	//Abosolute values to calculate GCF
+	int N = abs(inN); 
 	int D = abs(inD);
 
 
 	for (int i = 1; i <= N && i <= D; i++)
 	{
 		if (N % i == 0 && D % i == 0)
-			gcd = i;
+			gcf = i;
 	}
-		return gcd;
+		return gcf;
 
 	
 }
@@ -92,6 +93,7 @@ Broek Broek::adder(Broek aF)
 
 	nTaeller = tmpTaeller1 + tmpTaeller2;
 	nNaevner = pNaevner * Naevner;
+
 
 	Broek ret(nTaeller, nNaevner);
 	
@@ -167,13 +169,43 @@ Broek Broek::divider(Broek aF)
 
 }
 
-/*
-Broek Broek::operator+(Broek in)
-{
 
+Broek Broek::operator+(Broek in1)
+{
+	Broek plus;
+	plus.taeller = this->adder(in1).getTaeller();
+	plus.naevner = this->adder(in1).getNaevner();
+
+	return plus;
 }
 
-*/
+Broek Broek::operator-(Broek in1)
+{
+	Broek minus;
+	minus.taeller = this->subtraher(in1).getTaeller();
+	minus.naevner = this->subtraher(in1).getNaevner();
+
+	return minus;
+}
+
+Broek Broek::operator*(Broek in1)
+{
+	Broek mult;
+	mult.taeller = this->multiplicer(in1).getTaeller();
+	mult.naevner = this->multiplicer(in1).getNaevner();
+
+	return mult;
+}
+
+Broek Broek::operator/(Broek in1)
+{
+	Broek div;
+	div.taeller = this->divider(in1).getTaeller();
+	div.naevner = this->divider(in1).getNaevner();
+
+	return div;
+}
+
 
 
 
