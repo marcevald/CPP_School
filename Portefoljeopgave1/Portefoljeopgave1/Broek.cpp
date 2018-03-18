@@ -87,6 +87,7 @@ Broek Broek::adder(Broek aF)
 
 	int Taeller = getTaeller();
 	int Naevner = getNaevner();
+	
 
 	tmpTaeller1 = Taeller * pNaevner;
 	tmpTaeller2 = pTaeller * Naevner;
