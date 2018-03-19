@@ -37,11 +37,14 @@ int main()
 			cout << "B2: " << b2.getTaeller() << "/" << b2.getNaevner() << endl;
 			cout << "\n \n" << endl;
 
+			//Test operator overloads
 			Broek b3 = b1 + b2;
 			Broek b4 = b1 - b2;
 			Broek b5 = b1 * b2;
 			Broek b6 = b1 / b2;
 
+
+			//Output results of addition, subtraction, multiplication and division
 			cout << "Addition result: " << b3.getTaeller() << " / " << b3.getNaevner() << endl;
 			cout << "Subtraction result: " << b4.getTaeller() << " / " << b4.getNaevner() << endl;
 			cout << "Multiplication result: " << b5.getTaeller() << " / " << b5.getNaevner() << endl;

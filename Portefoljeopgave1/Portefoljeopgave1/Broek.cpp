@@ -15,7 +15,7 @@ Broek::Broek(int aN, int aD)
 {
 	if (aD == 0 && aN != 0) // Makes sure you cannot divide by 0. But it is possible to input 0/0.
 	{
-		throw exception();
+		throw exception(); // Throw exception if try to divide by 0
 	}
 	
 	if (aN == 0)
@@ -76,25 +76,32 @@ int Broek::getGcf(int inN, int inD)
 
 Broek Broek::adder(Broek aF)
 {
-	int nTaeller; //New nominator
+	int nTaeller; //New numerator
 	int nNaevner; //New common denominator
 
-	int tmpTaeller1; //Temporary nominator 1
-	int tmpTaeller2; //Temporary nominator 2
+	int tmpTaeller1; //Temporary numerator 1
+	int tmpTaeller2; //Temporary numerator 2
 
-	int pTaeller = aF.getTaeller(); //Nominator from parameter
+	int pTaeller = aF.getTaeller(); //Numerator from parameter
 	int pNaevner = aF.getNaevner(); //Denominator from parameter
 
 	int Taeller = getTaeller();
 	int Naevner = getNaevner();
 	
+	if (Naevner != 0 && pNaevner != 0)
+	{
+		tmpTaeller1 = Taeller * pNaevner;
+		tmpTaeller2 = pTaeller * Naevner;
 
-	tmpTaeller1 = Taeller * pNaevner;
-	tmpTaeller2 = pTaeller * Naevner;
+		nTaeller = tmpTaeller1 + tmpTaeller2;
+		nNaevner = pNaevner * Naevner;
 
-	nTaeller = tmpTaeller1 + tmpTaeller2;
-	nNaevner = pNaevner * Naevner;
-
+	}
+	else
+	{
+		nTaeller = Taeller + pTaeller;
+		nNaevner = Naevner + pNaevner;
+	}
 
 	Broek ret(nTaeller, nNaevner);
 	
@@ -104,23 +111,32 @@ Broek Broek::adder(Broek aF)
 
 Broek Broek::subtraher(Broek aF)
 {
-	int nTaeller; //New nominator
+	int nTaeller; //New numerator
 	int nNaevner; //New common denominator
 
-	int tmpTaeller1; //Temporary nominator 1
-	int tmpTaeller2; //Temporary nominator 2
+	int tmpTaeller1; //Temporary numerator 1
+	int tmpTaeller2; //Temporary numerator 2
 
-	int pTaeller = aF.getTaeller(); //Nominator from parameter
+	int pTaeller = aF.getTaeller(); //Numerator from parameter
 	int pNaevner = aF.getNaevner(); //Denominator from parameter
 
 	int Taeller = getTaeller();
 	int Naevner = getNaevner();
-
-	tmpTaeller1 = Taeller * pNaevner;
-	tmpTaeller2 = pTaeller * Naevner;
 	
-	nTaeller = tmpTaeller1 - tmpTaeller2;
-	nNaevner = pNaevner * Naevner;
+	if (Naevner != 0 && pNaevner != 0)
+	{
+		tmpTaeller1 = Taeller * pNaevner;
+		tmpTaeller2 = pTaeller * Naevner;
+
+		nTaeller = tmpTaeller1 - tmpTaeller2;
+		nNaevner = pNaevner * Naevner;
+
+	}
+	else
+	{
+		nTaeller = Taeller - pTaeller;
+		nNaevner = Naevner - pNaevner;
+	}
 
 	Broek ret(nTaeller, nNaevner); //Instanciate new Broek Class ret, to return result.
 
@@ -130,10 +146,10 @@ Broek Broek::subtraher(Broek aF)
 
 Broek Broek::multiplicer(Broek aF)
 {
-	int nTaeller; //New nominator
+	int nTaeller; //New numerator
 	int nNaevner; //New common denominator
 
-	int pTaeller = aF.getTaeller(); //Nominator from parameter
+	int pTaeller = aF.getTaeller(); //Numerator from parameter
 	int pNaevner = aF.getNaevner(); //Denominator from parameter
 
 	int Taeller = getTaeller(); 
@@ -151,26 +167,36 @@ Broek Broek::multiplicer(Broek aF)
 
 Broek Broek::divider(Broek aF)
 {
-	int nTaeller; //New nominator
+	int nTaeller; //New numerator
 	int nNaevner; //New common denominator
 
-	int pTaeller = aF.getTaeller(); //Nominator from parameter
+	int pTaeller = aF.getTaeller(); //Numerator from parameter
 	int pNaevner = aF.getNaevner(); //Denominator from parameter
 
 	int Taeller = getTaeller();
 	int Naevner = getNaevner();
 
-	//Make sure -/- is positive, abd +/- is -/+
-	nTaeller = Taeller * pNaevner;
-	nNaevner = Naevner * pTaeller;
+	//Okay to do 0/x but not x/0
+	if (Naevner != 0 && pNaevner != 0)
+	{
+		nTaeller = Taeller * pNaevner;
+		nNaevner = Naevner * pTaeller;
+	}
+
+	if (Naevner == 0 && pNaevner != 0)
+	{
+		nTaeller = 0;
+		nNaevner = 0;
+	}
+	if (pNaevner == 0 || pTaeller == 0)
+		throw exception();
 
 	Broek ret(nTaeller, nNaevner); //Instanciate new Broek Class ret, to return result.
 
 	return ret;
-
 }
 
-
+//Operator overload for adding fractions
 Broek Broek::operator+(Broek in1)
 {
 	Broek plus;
@@ -179,7 +205,7 @@ Broek Broek::operator+(Broek in1)
 
 	return plus;
 }
-
+//Operator overload for subtracting fractions
 Broek Broek::operator-(Broek in1)
 {
 	Broek minus;
@@ -188,7 +214,7 @@ Broek Broek::operator-(Broek in1)
 
 	return minus;
 }
-
+//Operator overload for multiplying fractions
 Broek Broek::operator*(Broek in1)
 {
 	Broek mult;
@@ -197,7 +223,7 @@ Broek Broek::operator*(Broek in1)
 
 	return mult;
 }
-
+//Operator overload for dividing fractions
 Broek Broek::operator/(Broek in1)
 {
 	Broek div;

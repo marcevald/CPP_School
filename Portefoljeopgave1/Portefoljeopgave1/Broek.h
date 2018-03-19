@@ -22,7 +22,7 @@ public:
 
 
 private:
-	int getGcf(int inN, int inD); //Get greastest common denominator (GCD)
+	int getGcf(int inN, int inD); //Get greastest common factor (GCF)
 	int taeller;
 	int naevner;
 
