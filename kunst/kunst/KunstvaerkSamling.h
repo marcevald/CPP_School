@@ -1,4 +1,6 @@
 #include <string>
+#include <vector>
+
 
 using namespace std;
 
@@ -6,11 +8,11 @@ class KunstvaerkSamling
 {
 public:
 	KunstvaerkSamling(string);
-	void addKunstvaerk();
+	void addKunstvaerk(KunstVaerk);
 
 	KunstvaerkSamling();
 	~KunstvaerkSamling();
 protected:
-	//KunstVaerk Kunstvaerker;
+	vector<KunstVaerk> kunstvaerker;
 	string navn;
 };
