@@ -1,22 +1,22 @@
 #include <string>
 #include "Maleri.h"
-#include "Museum.h"
-
 
 using namespace std;
 
-Maleri::Maleri(string enTitel, int etAar, int enLaengde, int enBredde)
+Maleri::Maleri()
+{
+}
+Maleri::~Maleri()
+{
+}
+
+Maleri::Maleri(string enTitel, int etAar, int enLaengde, int enBredde, Museum m)
 {
 	titel = enTitel;
 	aar = etAar;
 	laengde = enLaengde;
 	bredde = enBredde;
-	
+	etMuseum = m;
 }
 
-Maleri::~Maleri()
-{
-}
-Maleri::Maleri()
-{
-}
+

@@ -10,6 +10,8 @@ public:
 	Person();
 
 	Person(string, string, int, int);
+	string getNavn(); //----EKSTRA----
+
 protected:
 	string navn;
 	string nationalitet;

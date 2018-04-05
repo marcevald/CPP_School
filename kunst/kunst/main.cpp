@@ -1,10 +1,7 @@
 #include <string>
 #include <iostream>
 #include "KunstvaerkSamling.h"
-#include "Museum.h"
-#include "Person.h"
 #include "Maleri.h"
-
 
 using namespace std;
 
@@ -19,20 +16,22 @@ int main()
 	
 	Person lar("L.A. Ring", "dansk", 1854, 1933);
 	
-	/*
+	
 	Maleri kal("Kalkmanden", 1908, 80, 65, smk);
 	
 	
 	kal.addOM(lar);
 
 	Person cwe("C. W. Eckersberg", "dansk", 1783, 1853);
-	Maleri rus("Et russisk linjeskib til ankers ved Helsingør”,1828,140,135,fsm);
+	Maleri rus("Et russisk linjeskib til ankers ved Helsingør", 1828, 140, 135, fsm);
 	rus.addOM(cwe);
 
+	
 	Person køb("Christian Købke", "dansk", 1810, 1848);
 	Maleri par("Parti fra Dosseringen mod Nørrebro", 1841, 100, 85, smk);
 	par.addOM(køb);
 
+	/*
 	ks.addKunstvaerk(kal);
 	ks.addKunstvaerk(rus);
 	ks.addKunstvaerk(par);

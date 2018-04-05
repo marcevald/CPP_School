@@ -7,6 +7,11 @@ KunstvaerkSamling::KunstvaerkSamling(string etNavn)
 	navn = etNavn;
 }
 
+void KunstvaerkSamling::addKunstvaerk()
+{
+
+}
+
 KunstvaerkSamling::KunstvaerkSamling()
 {
 }
