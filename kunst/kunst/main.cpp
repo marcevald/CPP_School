@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 #include "KunstvaerkSamling.h"
-#include "Maleri.h"
+//#include "Maleri.h"
 
 using namespace std;
 
@@ -31,11 +31,12 @@ int main()
 	Maleri par("Parti fra Dosseringen mod Nørrebro", 1841, 100, 85, smk);
 	par.addOM(køb);
 
-	/*
+	
 	ks.addKunstvaerk(kal);
 	ks.addKunstvaerk(rus);
 	ks.addKunstvaerk(par);
 
+	/*
 	Person mah("Martin A. Hansen", "dansk", 1909, 1955);
 	Bog l("Løgneren", 1950, "Prosa", 232);
 	l.addOM(mah);

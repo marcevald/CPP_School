@@ -1,5 +1,5 @@
 #include "KunstvaerkSamling.h"
-#include "KunstVaerk.h"
+//#include "KunstVaerk.h"
 using namespace std;
 
 KunstvaerkSamling::KunstvaerkSamling(string etNavn)
@@ -7,10 +7,11 @@ KunstvaerkSamling::KunstvaerkSamling(string etNavn)
 	navn = etNavn;
 }
 
-void KunstvaerkSamling::addKunstvaerk(KunstVaerk k)
+void KunstvaerkSamling::addKunstvaerk(KunstVaerk kunst)
 {
-	kunstvaerker.push_back(k);
+	kunstvaerker.push_back(kunst);
 }
+
 
 KunstvaerkSamling::KunstvaerkSamling()
 {

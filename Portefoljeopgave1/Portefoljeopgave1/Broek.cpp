@@ -36,8 +36,10 @@ Broek::Broek(int aN, int aD)
 
 	// Make sure -/- is +/+ and +/- is -/+
 	if (taeller < 0 && naevner < 0)
+	{
 		naevner = abs(naevner);
-
+		taeller = abs(taeller);
+	}
 	if (naevner < 0 && taeller > 0)
 	{
 		naevner = abs(naevner);
