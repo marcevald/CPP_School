@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 
 using namespace std;
@@ -10,7 +11,7 @@ public:
 	Person();
 
 	Person(string, string, int, int);
-	string getNavn(); //----EKSTRA----
+	//string getNavn(); //----EKSTRA----
 
 protected:
 	string navn;

@@ -1,3 +1,4 @@
+#pragma once
 #include "Komposition.h"
 
 using namespace std;

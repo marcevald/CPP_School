@@ -1,7 +1,7 @@
+#pragma once
 #include <string>
 #include <iostream>
 #include "KunstvaerkSamling.h"
-//#include "Maleri.h"
 
 using namespace std;
 
@@ -15,11 +15,7 @@ int main()
 	
 	
 	Person lar("L.A. Ring", "dansk", 1854, 1933);
-	
-	
 	Maleri kal("Kalkmanden", 1908, 80, 65, smk);
-	
-	
 	kal.addOM(lar);
 
 	Person cwe("C. W. Eckersberg", "dansk", 1783, 1853);
@@ -36,11 +32,13 @@ int main()
 	ks.addKunstvaerk(rus);
 	ks.addKunstvaerk(par);
 
-	/*
+	
 	Person mah("Martin A. Hansen", "dansk", 1909, 1955);
+	
+	
 	Bog l("Løgneren", 1950, "Prosa", 232);
 	l.addOM(mah);
-
+	
 	Person hs("Hans Scherfig", "dansk", 1905, 1978);
 	Bog f("Den forsvundne Fuldmægtig", 1937, "Prosa", 222);
 	f.addOM(hs);
@@ -59,7 +57,7 @@ int main()
 	Person pm("Paul McCartney", "britisk", 1942, 0);
 	Person jl("John Lennon", "britisk", 1940, 1980);
 	Komposition y("Yesterday", 1965, "Pop", 211);
-
+	
 	y.addOM(pm);
 	y.addOM(jl);
 
@@ -69,7 +67,5 @@ int main()
 	Komposition lom("Life on Mars", 1971, "Rock", 309);
 	lom.addOM(db);
 	ks.addKunstvaerk(lom);
-
-	*/
 
 }

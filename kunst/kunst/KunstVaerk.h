@@ -1,5 +1,7 @@
+#pragma once
 #include <string>
 #include "Person.h"
+#include <vector>
 
 using namespace std;
 
@@ -9,13 +11,12 @@ public:
 	KunstVaerk();
 	~KunstVaerk();
 
-	Person ophavsMaend;
 	void addOM(Person); // Add ophavsmand
-
 	string getOphavsMaend(); // Get ophavsmaend ----EKSTRA----
 
 protected:
+	Person ophavsMaend[4];
+	int count = 0;
 	string titel;
 	int aar;
-
 };

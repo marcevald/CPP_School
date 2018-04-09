@@ -1,3 +1,4 @@
+#pragma once
 #include "Person.h"
 
 using namespace std;
@@ -10,10 +11,12 @@ Person::Person(string etNavn, string enNationalitet, int etFoedeaar, int etDoeds
 	doedsaar = etDoedsaar;
 }
 
+/*
 string Person::getNavn()
 {
 	return navn;
 }
+*/
 
 Person::Person()
 {

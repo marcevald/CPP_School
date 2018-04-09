@@ -1,9 +1,10 @@
+#pragma once
 #include <string>
 #include "KunstVaerk.h"
 
 using namespace std;
 
-class Komposition: protected KunstVaerk
+class Komposition: public KunstVaerk
 {
 public:
 	Komposition();

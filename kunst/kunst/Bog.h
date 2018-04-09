@@ -1,10 +1,11 @@
+#pragma once
 #include <string>
 #include "KunstVaerk.h"
 
 
 using namespace std;
 
-class Bog: protected KunstVaerk
+class Bog: public KunstVaerk
 {
 public:
 	Bog();

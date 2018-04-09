@@ -1,3 +1,4 @@
+#pragma once
 #include "KunstVaerk.h"
 #include <iostream>
 
@@ -12,9 +13,22 @@ KunstVaerk::~KunstVaerk()
 
 void KunstVaerk::addOM(Person p)
 {
-	ophavsMaend = p;
+	if (count < 5) //Only possible to store 5 ophavsMaend. (0-4)
+	{
+		ophavsMaend[count] = p;
+	}
+	else
+	{
+		count = 0; //If array already contains 5 ophavsMaend overwrite the first one.
+		ophavsMaend[count] = p;
+	}
+	
+	count++; //Increment count varibale everytime an ophavsMaend is added.
 }
-string KunstVaerk::getOphavsMaend()
+
+/*
+string KunstVaerk::getOphavsMaend() // -----EKSTRA-----
 {
 	return ophavsMaend.getNavn();
 }
+*/
