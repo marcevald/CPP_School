@@ -12,6 +12,7 @@ Maleri::~Maleri()
 }
 
 Maleri::Maleri(string enTitel, int etAar, int enLaengde, int enBredde, Museum m)
+	: KunstVaerk()
 {
 	titel = enTitel;
 	aar = etAar;

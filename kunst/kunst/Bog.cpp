@@ -12,6 +12,7 @@ Bog::~Bog()
 }
 
 Bog::Bog(string enTitel, int etAar, string enGenre, int etAntalSider)
+	: KunstVaerk()
 {
 	titel = enTitel;
 	aar = etAar;

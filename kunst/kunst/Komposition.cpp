@@ -12,6 +12,7 @@ Komposition::~Komposition()
 }
 
 Komposition::Komposition(string enTitel, int etAar, string enGenre, int enSpilleTid)
+	: KunstVaerk()
 {
 	titel = enTitel;
 	aar = etAar;
