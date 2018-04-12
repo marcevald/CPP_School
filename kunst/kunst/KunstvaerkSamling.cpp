@@ -16,7 +16,7 @@ void KunstvaerkSamling::addKunstvaerk(KunstVaerk kunst)
 
 void KunstvaerkSamling::findSangeMedFlereKomponister()
 {
-	
+	KunstVaerk& komp = dynamic_cast<Komposition&>();
 }
 
 void KunstvaerkSamling::findMalerierPaaMuseum(string etMaleri)

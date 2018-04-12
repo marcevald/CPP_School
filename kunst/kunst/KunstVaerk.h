@@ -9,13 +9,14 @@ class KunstVaerk
 {
 public:
 	KunstVaerk();
-	~KunstVaerk();
+	virtual ~KunstVaerk();
 
-	void addOM(Person); // Add ophavsmand
+	virtual void addOM(Person); // Add ophavsmand
 	string getOphavsMaend(); // Get ophavsmaend ----EKSTRA----
 
 protected:
-	Person ophavsMaend[4];
+	vector<Person> ophavsMaend;
+	//Person ophavsMaend[4];
 	int count = 0;
 	string titel;
 	int aar;

@@ -15,15 +15,13 @@ void KunstVaerk::addOM(Person p)
 {
 	if (count < 5) //Only possible to store 5 ophavsMaend. (0-4)
 	{
-		ophavsMaend[count] = p;
+		ophavsMaend.push_back(p);//Increment count varibale everytime an ophavsMaend is added.
+		count++;
 	}
 	else
 	{
-		count = 0; //If array already contains 5 ophavsMaend overwrite the first one.
-		ophavsMaend[count] = p;
+		throw exception(); //Only 5 ophavsMaend can be added.
 	}
-	
-	count++; //Increment count varibale everytime an ophavsMaend is added.
 }
 
 /*

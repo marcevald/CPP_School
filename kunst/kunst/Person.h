@@ -18,4 +18,5 @@ protected:
 	string nationalitet;
 	int foedeaar;
 	int doedsaar;
+
 };
