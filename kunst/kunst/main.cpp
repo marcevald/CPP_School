@@ -68,4 +68,8 @@ int main()
 	lom.addOM(db);
 	ks.addKunstvaerk(lom);
 
+	ks.findSangeMedFlereKomponister();
+
+	cout << y.getAntalOM() << endl;
+	cout << y.getTitel() << endl;
 }

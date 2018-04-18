@@ -11,6 +11,7 @@ class Maleri: public KunstVaerk
 {
 public:
 	Maleri(string, int, int, int, Museum);
+	
 	~Maleri();
 	Maleri();
 
