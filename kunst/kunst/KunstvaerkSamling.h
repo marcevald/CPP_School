@@ -19,7 +19,8 @@ public:
 	KunstvaerkSamling();
 	~KunstvaerkSamling();
 protected:
-	vector<KunstVaerk> kunstvaerker;
+	vector<KunstVaerk*> kunstvaerker;
 	string navn;
+	int antal;
 };
  

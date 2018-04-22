@@ -13,20 +13,16 @@ KunstVaerk::~KunstVaerk()
 
 void KunstVaerk::addOM(Person p)
 {
-	if (count < 5) //Only possible to store 5 ophavsMaend. (0-4)
-	{
-		ophavsMaend.push_back(p);//Increment count varibale everytime an ophavsMaend is added.
-		count++;
-	}
-	else
-	{
-		throw exception(); //Only 5 ophavsMaend can be added.
-	}
+		ophavsMaend.push_back(p);
 }
 
-/*
-string KunstVaerk::getOphavsMaend() // -----EKSTRA-----
+
+int KunstVaerk::getAntalOM()
 {
-	return ophavsMaend.getNavn();
+	return ophavsMaend.size();
 }
-*/
+
+string KunstVaerk::getTitel()
+{
+	return titel;
+}
