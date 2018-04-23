@@ -57,7 +57,7 @@ int main()
 	bib.listLaanersLaan("Torsten Eriksen");
 
 	cout << "-------------------------------------------------------------------" << endl;
-	cout << "Bogen er tidligst tilgaengelig: " << bib.tjekOmBogErTilgaengelig("The Fellowship of the Ring") << endl;
+	cout << "Bogen er tidligst tilgaengelig: " << bib.tjekOmBogErTilgaengelig("The Return of the King") << endl;
 	cout << "-------------------------------------------------------------------" << endl;
 
 
