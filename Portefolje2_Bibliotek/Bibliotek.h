@@ -19,6 +19,7 @@ public:
 
 	int tjekOmBogErTilgaengelig(const string&);
 	void listLaanersLaan(const string&);
+	bool titelIEksemplarer();
 
 protected:
 	vector<Udlaan> udlaan;

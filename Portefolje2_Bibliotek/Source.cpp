@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Bibliotek.h"
+#include "Udlaan.h"
 
 using namespace std;
 
@@ -49,8 +50,15 @@ int main()
 	bib.tilfoejUdl(udl4);
 	bib.tilfoejUdl(udl5);
 
+
+
+	// Test af listLaanersLaan() samt tjekOmBogErTilgaendelig()
+
 	bib.listLaanersLaan("Torsten Eriksen");
 
-	cout << bib.tjekOmBogErTilgaengelig("The Fellowship of the Ring") << endl;
+	cout << "-------------------------------------------------------------------" << endl;
+	cout << "Bogen er tidligst tilgaengelig: " << bib.tjekOmBogErTilgaengelig("The Fellowship of the Ring") << endl;
+	cout << "-------------------------------------------------------------------" << endl;
+
 
 }

@@ -14,10 +14,11 @@ public:
 	Laaner getLaaner();
 	Eksemplar getEksemplar();
 	int getDato();
+	int getAflDato();
 
 protected:
 	Dato datoForUdlaan;
-	int datoForAflevering;
+	Dato datoForAflevering;
 	Laaner laaner;
 	Eksemplar eksemplar;
 };

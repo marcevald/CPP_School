@@ -18,10 +18,10 @@ public:
 	bool validate();
 	int dayInYear();
 	int restDaysInYear();
-	int diffInDays(int);
+	int diffInDays(Dato enD);
 	int getWeekDay();
 	string getWeekDayText();
-	int addMaaned();
+	void addMaaned();
 
 
 	~Dato();
@@ -30,5 +30,4 @@ private:
 	void setDateMinusOne();
 	int datoen;
 	int enD;
-
 };

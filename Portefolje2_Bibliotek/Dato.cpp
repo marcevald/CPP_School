@@ -119,67 +119,39 @@ int Dato::restDaysInYear()
 		return 365 - dayInYear();
 }
 
-int Dato::diffInDays(int enD)
+int Dato::diffInDays(Dato enD)
 {
 	int count = 0;
 
 	Dato kopiDato(datoen);
 
-	if (kopiDato.datoen > enD)
+	if (kopiDato.datoen < enD.datoen)
 	{
-		while (kopiDato.datoen != enD)
+		while (kopiDato.datoen != enD.datoen)
 		{
-			setDateMinusOne();
+			kopiDato.setDatePlusOne();
 			count++;
 		}
-		return count;
+		
 	}
 
-	if (kopiDato.datoen < enD)
-	{
-		while (kopiDato.datoen != enD)
+	else 
+		if (kopiDato.datoen > enD.datoen)
 		{
-			setDatePlusOne();
+			while (kopiDato.datoen != enD.datoen)
+				{
+			kopiDato.setDateMinusOne();
 			count++;
+				}
+		
 		}
-		return count;
-	}
 
-	if (kopiDato.datoen == enD)
-	{
-		return 0;
-	}
+	return count;
 }
-
-/*
-{
-	int antalDage = 0;
-
-	Dato kopiDato(datoen);
-
-	if (kopiDato.datoen < enDato.datoen)
-	{
-		while (kopiDato.datoen != enDato.datoen)
-		{
-			kopiDato.setDatoPlusEn();
-			antalDage++;
-		}
-	}
-	else
-		if (kopiDato.datoen > enDato.datoen)
-		{
-			while (kopiDato.datoen != enDato.datoen)
-			{
-				kopiDato.setDatoMinusEn();
-				antalDage--;
-			}
-		}
-	return antalDage;
-}
-*/
 
 void Dato::setDatePlusOne()
 {
+	
 	datoen++;
 
 	while (!validate())
@@ -232,19 +204,23 @@ string Dato::getWeekDayText()
 
 }
 
-int Dato::addMaaned()
+void Dato::addMaaned()
 {
+	
+	bool start = true;
+	int count = 0;
 
-	while (diffInDays(datoen) != 30)
+	while (start)
 	{
-		setDatePlusOne();
+		datoen++;
+
+		if (validate())
+		{
+			count++;
+		}
+		if (count == 31)
+			start = false;
 	}
-
-	return datoen;
-
-
-	return 12;
-
 }
 
 Dato::~Dato()

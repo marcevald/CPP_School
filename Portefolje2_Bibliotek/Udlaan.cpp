@@ -16,8 +16,8 @@ Udlaan::Udlaan(Dato enDato, Laaner& enLaaner, Eksemplar& etEksemplar)
 	laaner = enLaaner;
 	eksemplar = etEksemplar;
 
-			// HUSK LAV NOGET KODE DER BEREGNER EN DATO 1 MÅNED FRA UDLEVERING.
-	datoForAflevering = enDato.addMaaned();
+	datoForAflevering = datoForUdlaan;
+	datoForAflevering.addMaaned();
 }
 
 Laaner Udlaan::getLaaner()
@@ -33,4 +33,8 @@ Eksemplar Udlaan::getEksemplar()
 int Udlaan::getDato()
 {
 	return datoForUdlaan.getDate();
+}
+int Udlaan::getAflDato()
+{
+	return datoForAflevering.getDate();
 }
