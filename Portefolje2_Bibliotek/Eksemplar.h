@@ -9,6 +9,8 @@ public:
 	~Eksemplar();
 
 	Eksemplar(const int&, Bog&);
+
+	Bog getBog();
 protected:
 	int bogNummer;
 	Bog bog;

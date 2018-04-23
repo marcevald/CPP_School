@@ -8,6 +8,9 @@ public:
 	~Laaner();
 
 	Laaner(const string&, const int&);
+
+	string getNavn();
+
 protected:
 	int nummer;
 

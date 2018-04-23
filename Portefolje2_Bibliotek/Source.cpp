@@ -48,4 +48,9 @@ int main()
 	
 	bib.tilfoejUdl(udl4);
 	bib.tilfoejUdl(udl5);
+
+	bib.listLaanersLaan("Torsten Eriksen");
+
+	cout << bib.tjekOmBogErTilgaengelig("The Fellowship of the Ring") << endl;
+
 }

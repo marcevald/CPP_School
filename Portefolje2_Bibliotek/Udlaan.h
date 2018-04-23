@@ -10,9 +10,14 @@ public:
 	~Udlaan();
 
 	Udlaan(Dato, Laaner&, Eksemplar&);
+	
+	Laaner getLaaner();
+	Eksemplar getEksemplar();
+	int getDato();
+
 protected:
 	Dato datoForUdlaan;
-	Dato datoForAflevering;
+	int datoForAflevering;
 	Laaner laaner;
 	Eksemplar eksemplar;
 };

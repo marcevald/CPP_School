@@ -9,6 +9,8 @@ public:
 	~Bog();
 
 	Bog(const string&, const Forfatter&, const int&);
+
+	string getTitel();
 protected:
 	string titel;
 	Forfatter forfatter;

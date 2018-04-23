@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{D919CE97-2B29-479B-AACB-6A9A1D265983}</ProjectGuid>
-    <RootNamespace>Portefolje2Bibliotek</RootNamespace>
+    <ProjectGuid>{8CE71841-497C-4D2E-A0CE-60B3D4C5BE0A}</ProjectGuid>
+    <RootNamespace>EAN</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,9 +88,6 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
-    <Link>
-      <SubSystem>Console</SubSystem>
-    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -121,25 +118,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bibliotek.cpp" />
-    <ClCompile Include="Bog.cpp" />
-    <ClCompile Include="Dato.cpp" />
-    <ClCompile Include="Eksemplar.cpp" />
-    <ClCompile Include="Forfatter.cpp" />
-    <ClCompile Include="Laaner.cpp" />
-    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="EAN.cpp" />
+    <ClCompile Include="ISBN.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Udlaan.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bibliotek.h" />
-    <ClInclude Include="Bog.h" />
-    <ClInclude Include="Dato.h" />
-    <ClInclude Include="Eksemplar.h" />
-    <ClInclude Include="Forfatter.h" />
-    <ClInclude Include="Laaner.h" />
-    <ClInclude Include="Person.h" />
-    <ClInclude Include="Udlaan.h" />
+    <ClInclude Include="EAN.h" />
+    <ClInclude Include="ISBN.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

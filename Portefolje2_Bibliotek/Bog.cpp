@@ -17,3 +17,8 @@ Bog::Bog(const string& enTitel, const Forfatter& enForfatter, const int& etUdgiv
 	forfatter = enForfatter;
 	udgivelsesAar = etUdgivelsesAar;
 }
+
+string Bog::getTitel()
+{
+	return titel;
+}

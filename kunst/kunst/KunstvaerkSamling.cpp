@@ -27,7 +27,6 @@ void KunstvaerkSamling::findSangeMedFlereKomponister()
 
 		if (komp != 0)
 		{
-			cout << "test" << endl;
 			if (komp->getAntalOM() > 1)
 			{
 				cout << komp->getTitel() << endl;

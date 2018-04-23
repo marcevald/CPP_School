@@ -15,3 +15,8 @@ Eksemplar::Eksemplar(const int& etBogNummer, Bog& enBog)
 	bog = enBog;
 
 }
+
+Bog Eksemplar::getBog()
+{
+	return bog;
+}

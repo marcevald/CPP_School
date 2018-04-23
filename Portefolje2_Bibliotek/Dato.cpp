@@ -12,8 +12,6 @@ Dato::Dato()
 Dato::Dato(int aDate)	// Sets date in format YYYYMMDD
 {
 	datoen = aDate;
-
-	datoCopy = datoen;
 }
 
 int Dato::getDate()	//Returns Date in format YYYYMMDD
@@ -121,13 +119,15 @@ int Dato::restDaysInYear()
 		return 365 - dayInYear();
 }
 
-int Dato::diffInDays(Dato enD)
+int Dato::diffInDays(int enD)
 {
 	int count = 0;
 
-	if (datoen > enD.getDate())
+	Dato kopiDato(datoen);
+
+	if (kopiDato.datoen > enD)
 	{
-		while (datoen != enD.getDate())
+		while (kopiDato.datoen != enD)
 		{
 			setDateMinusOne();
 			count++;
@@ -135,9 +135,9 @@ int Dato::diffInDays(Dato enD)
 		return count;
 	}
 
-	if (datoen < enD.getDate())
+	if (kopiDato.datoen < enD)
 	{
-		while (datoen != enD.getDate())
+		while (kopiDato.datoen != enD)
 		{
 			setDatePlusOne();
 			count++;
@@ -145,29 +145,56 @@ int Dato::diffInDays(Dato enD)
 		return count;
 	}
 
-	if (datoen == enD.getDate())
+	if (kopiDato.datoen == enD)
 	{
 		return 0;
 	}
 }
 
+/*
+{
+	int antalDage = 0;
+
+	Dato kopiDato(datoen);
+
+	if (kopiDato.datoen < enDato.datoen)
+	{
+		while (kopiDato.datoen != enDato.datoen)
+		{
+			kopiDato.setDatoPlusEn();
+			antalDage++;
+		}
+	}
+	else
+		if (kopiDato.datoen > enDato.datoen)
+		{
+			while (kopiDato.datoen != enDato.datoen)
+			{
+				kopiDato.setDatoMinusEn();
+				antalDage--;
+			}
+		}
+	return antalDage;
+}
+*/
+
 void Dato::setDatePlusOne()
 {
-	datoCopy++;
+	datoen++;
 
 	while (!validate())
 	{
-		datoCopy++;
+		datoen++;
 	}
 }
 
 void Dato::setDateMinusOne()
 {
-	datoCopy--;
+	datoen--;
 
 	while (!validate())
 	{
-		datoCopy--;
+		datoen--;
 	}
 }
 
@@ -202,6 +229,21 @@ string Dato::getWeekDayText()
 		return 0;
 		break;
 	}
+
+}
+
+int Dato::addMaaned()
+{
+
+	while (diffInDays(datoen) != 30)
+	{
+		setDatePlusOne();
+	}
+
+	return datoen;
+
+
+	return 12;
 
 }
 

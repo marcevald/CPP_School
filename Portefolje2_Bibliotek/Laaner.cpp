@@ -17,3 +17,8 @@ Laaner::Laaner(const string& etNavn, const int& etNummer)
 	navn = etNavn;
 	nummer = etNummer;
 }
+
+string Laaner::getNavn()
+{
+	return navn;
+}
