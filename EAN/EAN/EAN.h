@@ -8,6 +8,8 @@ class EAN
 public: 
 	EAN(string etNummer);
 	bool isValid();
+	bool isValid(string);
+	string convertISBNToEAN(string);
 
 	EAN();
 	~EAN();
