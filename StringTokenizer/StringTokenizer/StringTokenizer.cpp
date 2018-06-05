@@ -74,17 +74,45 @@ string StringTokenizer::nextToken()
 		if (test)
 		{
 			ret += tekst.at(i);
-			indeks = indeks + i + 1;
 		}
 		else
 			break;
 	}
+	indeks += ret.size();
+
 	return ret;
+	
 }
 
 string StringTokenizer::nextToken(string delimiters)
 {
-	return "";
+	delim = delimiters;
+	
+	string ret = "";
+
+	if (!hasMoreTokens())
+		return "";
+
+	for (int i = indeks; i < tekst.size(); i++)
+	{
+		bool test = true;
+
+		for (int j = 0; j < delim.size(); j++)
+		{
+			if (tekst.at(i) == delim.at(j))
+				test = false;
+		}
+
+		if (test)
+		{
+			ret += tekst.at(i);
+		}
+		else
+			break;
+	}
+	indeks += ret.size();
+
+	return ret;
 }
 
 int StringTokenizer::getIndeks()
